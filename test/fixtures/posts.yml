@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: First Title
+  description: First description
+
+two:
+  title: Second title
+  description: Second description
