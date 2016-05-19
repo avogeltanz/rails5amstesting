@@ -59,7 +59,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     post posts_url, params: { title: "Created Title", description: "C" }
     # Assert/Then
     assert_response :unprocessable_entity
-    assert_equal response.body, file_fixture('posts_create_short_desc.json').read
+    assert_equal response.body, file_fixture('posts_create_422.json').read
   end
 
 end
