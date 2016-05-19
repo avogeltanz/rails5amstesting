@@ -7,4 +7,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def not_found(klass, id)
+    file_fixture('404.json').read.gsub(/klass/, klass).gsub(/\'id\'=/, "'id'=#{id}")
+  end
 end
