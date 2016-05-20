@@ -6,8 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = params | find_post
-    render json: @post
+    params | find_post | serialize
   end
 
   def create
@@ -23,6 +22,12 @@ class PostsController < ApplicationController
   def find_post
     -> (params) {
       @post ||= Post.find(params[:id])
+    }
+  end
+
+  def serialize
+    -> (post) {
+      render json: post
     }
   end
 
