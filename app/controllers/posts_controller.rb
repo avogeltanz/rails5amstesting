@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = params | find_post
     render json: @post
   end
 
@@ -17,6 +17,13 @@ class PostsController < ApplicationController
     else
       render json: {errors: @post.errors}, status: :unprocessable_entity
     end
+  end
+
+  private
+  def find_post
+    -> (params) {
+      @post ||= Post.find(params[:id])
+    }
   end
 
 end
