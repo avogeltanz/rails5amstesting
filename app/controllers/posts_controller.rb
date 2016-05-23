@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  def index
+  def index    
     @posts = Post.all
     render json: @posts
   end
@@ -16,6 +16,14 @@ class PostsController < ApplicationController
     else
       render json: {errors: @post.errors}, status: :unprocessable_entity
     end
+  end
+
+  def prototype
+    render json: Post.prototype('post_proto', params[:id]), serializer: PostProtoSerializer
+  end
+
+  def prototoo
+    render json: Post.prototype('post_proto'), serializer: PrototooSerializer
   end
 
   private

@@ -1,0 +1,17 @@
+show:
+  title: First Title
+  description: First description
+
+index:
+  - title: First Title
+    description: First description
+  - title: Second title
+    description: Second description
+
+create:
+  title: Created Title
+  description: Created description
+
+post_proto:
+  title: Prototype Title
+  description: Prototype Description
