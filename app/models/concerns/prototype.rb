@@ -6,11 +6,11 @@ module Prototype
     def prototype(fixture, id='no_id')
       temp_proto = YAML.load_file(File.expand_path("../proto/#{self.new.class.name.downcase}.yml", __dir__))[fixture]
       unless temp_proto.class == Array
-        self.new(temp_proto.tap {|tp| tp['id'] ||= id})
+        self.new(temp_proto.tap {|tp| tp['id'] ||= id if self.instance_methods.include?(:id=)})
       else
         [].tap do |arr|
           temp_proto.each_with_index do |tp, index|
-            arr << self.new(tp.tap {|t| t['id'] ||= index + 1})
+            arr << self.new(tp.tap {|t| t['id'] ||= index + 1 if self.instance_methods.include?(:id=)})
           end
         end
       end
