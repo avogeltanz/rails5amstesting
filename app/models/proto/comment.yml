@@ -1,0 +1,9 @@
+show:
+  body: A single comment body
+
+index:
+  - id: 1234
+    body: First comment body
+  - id: 1235
+    body: Second comment body
+
