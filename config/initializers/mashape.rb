@@ -1,0 +1,1 @@
+MASHAPE = YAML.load_file(Rails.root.join('config/mashape.yml'))

@@ -1,0 +1,21 @@
+show:
+  title: First Title
+  description: First description
+
+index:
+  - title: First Title
+    description: First description
+  - title: Second title
+    description: Second description
+
+create:
+  title: Created Title
+  description: Created description
+
+post_proto:
+  title: Test for QA
+  description: This is some data we want QA to see
+
+focus_jared:
+  title: Focus
+  description: Jared

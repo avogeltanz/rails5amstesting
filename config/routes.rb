@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :comments
+  resources :vetted_comments
   resources :posts
 
   # prototyping with non-resourceful routes
