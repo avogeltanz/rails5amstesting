@@ -1,13 +1,19 @@
 class CommentsController < ApplicationController
   def index
-    render json: Comment.prototype('index'), each_serializer: CommentSerializer
+    render json: Comment.all, each_serializer: CommentSerializer
   end
 
   def show
-    render json: Comment.prototype('show', params[:id])
+    @comment = Comment.find(params[:id])
+    render json: @comment
   end
 
-  def show_fake
-    render json: Fake.prototype('show'), serializer: FakeSerializer
+  def create
+    @comment = Comment.create(params.permit(:body))
+    if @comment.valid?
+      render json: @comment
+    else
+      render json: {errors: @comment.errors}, status: :unprocessable_entity
+    end
   end
 end
