@@ -4,6 +4,6 @@ show:
   three: This is three
 
 fake_too:
-  title: Fake title
-  description: Just like the news
-  tone: negative
+  one: This is one
+  two: This is two
+  three: This is three

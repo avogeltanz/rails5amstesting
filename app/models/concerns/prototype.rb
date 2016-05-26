@@ -4,7 +4,7 @@ module Prototype
   module ClassMethods
 
     def prototype(fixture, id='no_id')
-      temp_proto = YAML.load_file(File.expand_path("../proto/#{self.new.class.name.downcase}.yml", __dir__))[fixture]
+      temp_proto = YAML.load_file(File.expand_path("../prototypes/#{self.new.class.name.pluralize.underscore.downcase}.yml", __dir__))[fixture]
       unless temp_proto.class == Array
         self.new(temp_proto.tap {|tp| tp['id'] ||= id if self.instance_methods.include?(:id=)})
       else
