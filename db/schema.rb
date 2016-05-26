@@ -13,10 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20160523024901) do
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", id: false, force: :cascade do |t|
+    t.string   "id",         limit: 36
     t.string   "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "tone"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["id"], name: "index_comments_on_id", unique: true
   end
 
   create_table "posts", id: false, force: :cascade do |t|

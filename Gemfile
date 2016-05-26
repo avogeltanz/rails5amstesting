@@ -19,6 +19,8 @@ gem 'active_model_serializers', '0.10.0'
 # gem 'capistrano-rails', group: :development
 gem 'httparty', '0.13.7'
 
+gem 'sidekiq', '>= 4.1.2'
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
