@@ -16,4 +16,15 @@ class CommentsController < ApplicationController
       render json: {errors: @comment.errors}, status: :unprocessable_entity
     end
   end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @comment.body = params[:body]
+    if @comment.valid?
+      @comment.save
+      render json: @comment
+    else
+      render json: {errors: @comment.errors}, status: :unprocessable_entity
+    end
+  end
 end

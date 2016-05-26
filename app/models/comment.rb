@@ -3,11 +3,11 @@ class Comment < ApplicationRecord
   include Pipeable
 
   validates_presence_of :body
-  after_create_commit :vet_comment
+  after_save :vet_comment
 
   def vet_comment
     # http://edgeapi.rubyonrails.org/classes/ActiveJob/QueueAdapters/AsyncAdapter.html
     # The default adapter performs asynchonously
-    VettedCommentJob.perform_later(self.id, self.body)
+    VettedCommentJob.perform_later(self)
   end
 end
