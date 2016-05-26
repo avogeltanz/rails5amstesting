@@ -1,4 +1,3 @@
 class Fake < PrototypeRecord
-  attr_accessor :one, :two, :three
-  
+  attr_accessor :id, :one, :two, :three
 end

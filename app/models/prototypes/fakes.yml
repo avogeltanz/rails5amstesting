@@ -1,9 +1,12 @@
+index:
+  - one: This is one
+    two: This is two
+    three: This is three
+  - one: This is one
+    two: This is two
+    three: This is three
+    
 show:
-  one: This is one
-  two: This is two
-  three: This is three
-
-fake_too:
   one: This is one
   two: This is two
   three: This is three

@@ -18,14 +18,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def prototype
-    render json: Post.prototype('post_proto', params[:id]), serializer: PostProtoSerializer
-  end
-
-  def prototoo
-    render json: Post.prototype('post_proto'), serializer: PrototooSerializer
-  end
-
   private
   def find_post
     -> (params) {

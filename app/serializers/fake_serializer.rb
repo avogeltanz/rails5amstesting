@@ -1,3 +1,3 @@
 class FakeSerializer < ActiveModel::Serializer
-  attributes :one, :two, :three
+  attributes :id, :one, :two, :three
 end
