@@ -21,6 +21,8 @@ gem 'httparty', '0.13.7'
 
 gem 'sidekiq', '>= 4.1.2'
 
+gem 'pg'
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
