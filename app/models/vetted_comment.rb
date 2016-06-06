@@ -5,7 +5,11 @@ class VettedComment
   include ActiveModel::Validations
   attr_accessor :body, :tone
 
-  def self.vet_comment(body)
+  def initialize(body)
+    @body = body
+  end
+
+  def vet_comment
     key = MASHAPE['sentiment']['key']
     sentiment_uri = MASHAPE['sentiment']['uri']
     
@@ -18,6 +22,8 @@ class VettedComment
     end
 
     res = HTTParty.post(sentiment_uri, :query => query, :headers => headers)
-    self.new(body: body, tone: res['type'])
+    self.tap do |vc|
+      vc.tone = res['type']
+    end
   end
 end
