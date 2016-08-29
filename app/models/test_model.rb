@@ -5,13 +5,13 @@ class TestModel
   attr_accessor :id, :one, :two, :three, :four
 
   def self.find(id)
+    found = nil
     self.all.each do |tm|
       if tm.id === id.to_i
-        return tm
-      else
-        return nil
+        found = tm
       end
     end
+    found
   end
 
   def self.all
