@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   scope '/prototypes' do
     resources :fakes, only: [:index, :show]
+    resources :test_models, only: [:show]
   end
 end

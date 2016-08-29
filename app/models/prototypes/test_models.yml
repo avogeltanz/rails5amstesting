@@ -1,0 +1,19 @@
+---
+- !ruby/object:TestModel
+  id: 1
+  one: one
+  two: two
+  three: three
+  four: four
+- !ruby/object:TestModel
+  id: 2
+  one: five
+  two: six
+  three: seven
+  four: eight
+- !ruby/object:TestModel
+  id: 3
+  one: nine
+  two: ten
+  three: eleven
+  four: twelve
